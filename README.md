@@ -14,11 +14,11 @@ These queries support consistency checking and cross-domain analysis of construc
 
 | Query | Purpose | Link |
 |-------|---------|------|
-| Q1 | List of resources linked to tasks (with type) | [View Q2](queries/Q2.sparql) |
-| Q2 | List of geometries linked to tasks (with GlobalId) | [View Q4](queries/Q4.sparql) |
-| Q3 | Cost items associated with each task | [View Q6](queries/Q6.sparql) |
-| Q4 | Resources linked to cost items (with type) | [View Q8](queries/Q8.sparql) |
-| Q5 | Geometries linked to cost items (with GlobalId) | [View Q10](queries/Q10.sparql) |
+| Q1 | List of Resources Linked to Task | [View Q1](queries/Q1.sparql) |
+| Q2 | List of Cost Items Linked to Tasks | [View Q2](queries/Q2.sparql) |
+| Q3 | List of Cost Items Linked to Tasks | [View Q3](queries/Q3.sparql) |
+| Q4 | List of Resources Linked to Cost Item | [View Q4](queries/Q4.sparql) |
+| Q5 | List of Geometries Linked to Cost Item | [View Q5](queries/Q5.sparql) |
 
 > All queries are designed to work with a unified RDF knowledge graph structured through domain-specific ontologies such as `cr:`, `ci:`, `dtc:`, and `ifc:`.
 
