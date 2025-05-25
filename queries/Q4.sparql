@@ -1,0 +1,13 @@
+PREFIX cr: <https://w3id.org/cr#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?costItem ?resource ?resourceType
+WHERE {
+  ?assign_res_cost a cr:ResourceToCostItemAssignment ;
+                   cr:refCostItem ?costItem ;
+                   cr:refResource ?resource .
+
+  ?resource rdf:type ?resourceType .
+  FILTER(STRSTARTS(STR(?resourceType), "https://w3id.org/cr#"))
+}
+ORDER BY ?costItem ?resource

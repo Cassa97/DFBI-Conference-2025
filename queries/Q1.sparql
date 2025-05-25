@@ -1,0 +1,28 @@
+PREFIX dtc: <https://dtc-ontology.cms.ed.tum.de/ontology#>
+PREFIX cr: <https://w3id.org/cr#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX msproj: <http://schemas.microsoft.com/project#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?taskLabel ?task ?resLabel ?res_sched ?resourceType
+WHERE {
+  ?task a dtc:Task .
+  
+  OPTIONAL { ?task rdfs:label ?taskLabel . }
+  OPTIONAL { ?task msproj:WBS ?wbs . }
+  FILTER (REGEX(STR(?wbs), "^\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$"))
+
+  # Relazione task → risorsa
+  ?assign_sched a cr:ResourceToTaskAssignment ;
+                cr:refTask ?task ;
+                cr:refResource ?res_sched .
+
+  ?res_sched rdf:type ?resourceType .
+  FILTER(
+    STRSTARTS(STR(?resourceType), "https://w3id.org/cr#") &&
+    STR(?resourceType) != "https://w3id.org/cr#Resource"
+  )
+
+  OPTIONAL { ?res_sched rdfs:label ?resLabel . }
+}
+ORDER BY ?wbs ?task ?res_sched

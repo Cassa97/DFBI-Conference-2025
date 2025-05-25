@@ -1,0 +1,26 @@
+PREFIX dtc: <https://dtc-ontology.cms.ed.tum.de/ontology#>
+PREFIX cr: <https://w3id.org/cr#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX msproj: <http://schemas.microsoft.com/project#>
+PREFIX express: <https://w3id.org/express#>
+PREFIX ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL#>
+
+SELECT DISTINCT ?taskLabel ?task ?geometry ?geometryGlobalId
+WHERE {
+  ?task a dtc:Task .
+  OPTIONAL { ?task rdfs:label ?taskLabel . }
+  OPTIONAL { ?task msproj:WBS ?wbs . }
+  FILTER (REGEX(STR(?wbs), "^\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$"))
+
+  {
+    # Geometria diretta
+    ?assign_task_geom a cr:TaskToGeometryAssignment ;
+                      cr:refTask ?task ;
+                      cr:refGeometry ?geometry .
+  }
+  OPTIONAL {
+    ?geometry ifc:globalId_IfcRoot ?gidNode .
+    ?gidNode express:hasString ?geometryGlobalId .
+  }
+}
+ORDER BY ?taskLabel ?wbs ?geometry

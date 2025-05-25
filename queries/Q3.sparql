@@ -1,0 +1,19 @@
+PREFIX dtc: <https://dtc-ontology.cms.ed.tum.de/ontology#>
+PREFIX cr: <https://w3id.org/cr#>
+PREFIX ci: <https://w3id.org/ci#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX msproj: <http://schemas.microsoft.com/project#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?task ?taskLabel ?costItem
+WHERE {
+  ?task a dtc:Task .
+  OPTIONAL { ?task rdfs:label ?taskLabel . }
+  OPTIONAL { ?task msproj:WBS ?wbs . }
+  FILTER(REGEX(STR(?wbs), "^\\d+\\.\\d+\\.\\d+\\.\\d+\\.\\d+$"))
+
+  ?assign_cost a cr:TaskToCostItemAssignment ;
+               cr:refTask ?task ;
+               cr:refCostItem ?costItem .
+}
+ORDER BY ?taskLabel ?wbs ?costItem
