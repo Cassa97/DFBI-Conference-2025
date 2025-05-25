@@ -4,7 +4,7 @@ SPARQL Queries for Semantic Analysis of Construction Projects
 
 This repository collects the SPARQL queries developed for the research paper:
 
-**"Semantic Integration of Cost, Time, Resources, and Geometry for Data-Driven Decision-Making in Construction Projects"**
+**"Semantic Integration of Cost, Time, Resource, and Geometry for Data-Driven Construction Management: An Interactive Dashboard for Decision Support"**
 
 These queries support consistency checking and cross-domain analysis of construction project data modeled in RDF, using ontologies and Linked Data technologies. The approach enables integration between scheduling, costing, resource planning, and BIM-based geometries.
 
