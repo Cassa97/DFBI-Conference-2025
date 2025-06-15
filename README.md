@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/189f40ec-bb74-4061-9898-69d9bb37e07b
 # DFBI-Conference-2025
 Case Study for the DFBI Conference
 SPARQL Queries for Semantic Analysis of Construction Projects
@@ -42,3 +44,8 @@ The results of these queries are visualized in a Power BI interactive dashboard 
 - Real-time project monitoring
 - Cross-domain data comparison
 - Detection of inconsistencies across cost, time, and geometry
+
+
+
+https://github.com/user-attachments/assets/67375419-cc7d-42c0-894d-0e4f61ce8576
+
