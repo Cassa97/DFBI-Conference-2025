@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/189f40ec-bb74-4061-9898-69d9bb37e07b
 # DFBI-Conference-2025
 Case Study for the DFBI Conference
 SPARQL Queries for Semantic Analysis of Construction Projects
