@@ -44,7 +44,8 @@ The results of these queries are visualized in a Power BI interactive dashboard 
 - Detection of inconsistencies across cost, time, and geometry
 
 
-![Immagine2](https://github.com/user-attachments/assets/45a5aea5-d13c-4d48-b657-9ad4439451d5)
 
+
+![Immagine1](https://github.com/user-attachments/assets/c49f1d0f-70d6-4ab3-b968-cd08f2488fcb)
 
 
